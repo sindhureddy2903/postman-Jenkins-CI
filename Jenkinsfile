@@ -7,7 +7,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         sh 'npm install'
-        sh 'npm run node-test'
+        sh 'npm run api-test'
       }
     }               
   }
