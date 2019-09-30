@@ -1,6 +1,14 @@
-node {
-   stage('build') {
-          sh 'npm --version'
-   }
+pipeline {
+  agent any
+
+  tools {nodejs "node js"}
+
+  stages {        
+    stage('Install dependencies') {
+      steps {
+        sh 'npm install'
+      }
+    }               
+  }
 }
 
