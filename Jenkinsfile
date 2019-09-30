@@ -3,9 +3,9 @@ node {
       git 'https://github.com/sindhureddy2903/postman-Jenkins-CI.git'
    }
    stage('Install Node Dependencies'){
-      bat 'npm install'
+      sh 'npm install'
    }
    stage('Run Tests'){
-      bat 'npm run api-test'
+      sh 'npm run api-test'
    }
 }
