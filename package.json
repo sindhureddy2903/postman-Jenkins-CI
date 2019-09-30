@@ -1,0 +1,12 @@
+{
+  "name": "postmancicd",
+  "version": "1.0.0",
+  "description": "node project to stiore postman collection",
+  "scripts": {
+    "api-test": "newman run json-placeholder.json -n 1"
+  },
+  "author": "sindhuja nandikonda",
+  "dependencies": {
+    "newman": "^4.5.4"
+  }
+}
