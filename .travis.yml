@@ -1,12 +1,14 @@
 language: node_js
-stages:
-    - test
+node_js:
+  - "8.2.1"
 
-postman_tests:
-    stage: test
-    image: 
-        name: postman/newman_alpine33
-        entrypoint: [""]
-    script:
-        - newman --version
-      
+install:
+  - npm install newman
+
+before_script:
+  - node --version
+  - npm --version
+  - node_modules/.bin/newman --version
+
+script:
+  - node_modules/.bin/newman run tests/bitcoinz.postman_collection.json -e tests/tests.postman_environment.json
