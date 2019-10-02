@@ -1,7 +1,6 @@
 pipeline {
   agent {
-    docker { 
-      label 'docker'
+    docker {
       image 'postman/newman_alpine33' 
     }
   }
