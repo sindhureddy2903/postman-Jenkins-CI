@@ -1,13 +1,11 @@
 pipeline {
-  agent any
-
-  tools {nodejs "node js"}
+  agent {
+    docker { image 'postman/newman_alpine33' }
 
   stages {        
-    stage('Install dependencies') {
+    stage('Test') {
       steps {
-        sh 'npm install'
-        sh 'npm run api-test'
+        sh 'neman --version'
       }
     }               
   }
