@@ -3,7 +3,6 @@ pipeline {
     docker { 
       label 'docker'
       image 'postman/newman_alpine33' 
-      entrypoint '[""]'
     }
   }
 
