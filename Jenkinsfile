@@ -1,6 +1,10 @@
 pipeline {
   agent {
-    docker { image 'postman/newman_alpine33' }
+    docker { 
+      label 'docker'
+      image 'postman/newman_alpine33' 
+      entrypoint '[""]'
+    }
   }
 
   stages {        
