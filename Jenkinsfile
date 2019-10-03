@@ -1,13 +1,13 @@
 pipeline {
-  agent any
-
-  stages {        
-    stage('Test') {
-      steps {
-        docker pull postman/newman_alpine33
-        sh 'neman --version'
-      }
-    }               
-  }
+ agent {
+   docker { image ‘postman/newman_alpine33’ }
+ tools {nodejs “node js”}
+ stages {
+   stage(‘Install dependencies’) {
+     steps {
+       sh ‘npm install’
+       sh ‘npm run api-test’
+     }
+   }
+ }
 }
-
