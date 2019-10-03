@@ -1,5 +1,5 @@
 node {
-     dockerNode('postman/newman_alpine33').inside("--entrypoint='['']'") {
+     dockerNode('postman/newman_alpine33') {
       sh "newman --version"
      }
   }
